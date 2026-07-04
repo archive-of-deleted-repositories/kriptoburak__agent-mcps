@@ -6,104 +6,217 @@
     "fetch": {
       "type": "stdio",
       "command": "uvx",
-      "args": ["mcp-server-fetch"],
-      "categories": ["web"],
-      "agents": ["*"]
+      "args": [
+        "mcp-server-fetch"
+      ],
+      "categories": [
+        "web"
+      ],
+      "agents": [
+        "*"
+      ]
     },
     "searxng": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "mcp-searxng"],
-      "env": { "SEARXNG_URL": "https://baresearch.org" },
-      "categories": ["web", "search"],
-      "agents": ["*"]
+      "args": [
+        "-y",
+        "mcp-searxng"
+      ],
+      "env": {
+        "SEARXNG_URL": "https://baresearch.org"
+      },
+      "categories": [
+        "web",
+        "search"
+      ],
+      "agents": [
+        "*"
+      ]
     },
     "open-websearch": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "open-websearch"],
-      "env": { "MODE": "stdio", "DEFAULT_SEARCH_ENGINE": "duckduckgo" },
-      "categories": ["web", "search"],
-      "agents": ["*"]
+      "args": [
+        "-y",
+        "open-websearch"
+      ],
+      "env": {
+        "MODE": "stdio",
+        "DEFAULT_SEARCH_ENGINE": "duckduckgo"
+      },
+      "categories": [
+        "web",
+        "search"
+      ],
+      "agents": [
+        "*"
+      ]
     },
     "mcp-crawl": {
       "type": "stdio",
       "command": "node",
-      "args": ["./scripts/crawl-mcp/server.js"],
-      "categories": ["web"],
-      "agents": ["cc"],
+      "args": [
+        "./scripts/crawl-mcp/server.js"
+      ],
+      "categories": [
+        "web"
+      ],
+      "agents": [
+        "cc"
+      ],
       "_workspace_local": true
     },
     "serena": {
       "type": "stdio",
       "command": "uvx",
       "args": [
-        "--from", "git+https://github.com/oraios/serena",
-        "serena", "start-mcp-server",
-        "--context", "ide-assistant",
-        "--project", "."
+        "--from",
+        "git+https://github.com/oraios/serena",
+        "serena",
+        "start-mcp-server",
+        "--context",
+        "ide-assistant",
+        "--project",
+        "."
       ],
-      "categories": ["coding", "codebase"],
-      "agents": ["cc", "opencode", "kilo"]
+      "categories": [
+        "coding",
+        "codebase"
+      ],
+      "agents": [
+        "cc",
+        "opencode",
+        "kilo",
+        "cline"
+      ]
     },
     "codebase-memory": {
       "type": "stdio",
       "command": "C:/Users/C5420321/AppData/Local/Programs/codebase-memory-mcp/codebase-memory-mcp.exe",
       "args": [],
-      "categories": ["coding", "memory"],
-      "agents": ["cc"],
+      "categories": [
+        "coding",
+        "memory"
+      ],
+      "agents": [
+        "cc"
+      ],
       "_windows_only": true
     },
     "one-search-mcp": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "one-search-mcp"],
-      "env": { "SEARCH_PROVIDER": "local" },
-      "categories": ["web", "search"],
-      "agents": ["*"]
+      "args": [
+        "-y",
+        "one-search-mcp"
+      ],
+      "env": {
+        "SEARCH_PROVIDER": "local"
+      },
+      "categories": [
+        "web",
+        "search"
+      ],
+      "agents": [
+        "*"
+      ]
     },
     "resend": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "resend-mcp"],
+      "args": [
+        "-y",
+        "resend-mcp"
+      ],
       "env": {
         "RESEND_API_KEY": "${env:RESEND_API_KEY}",
         "SENDER_EMAIL_ADDRESS": "chirag@oriz.in"
       },
-      "categories": ["email"],
-      "agents": ["*"]
+      "categories": [
+        "email"
+      ],
+      "agents": [
+        "*"
+      ]
     },
     "screenpipe": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "screenpipe@latest", "mcp"],
-      "env": { "SCREENPIPE_API_KEY": "${env:SCREENPIPE_API_KEY}" },
-      "categories": ["memory", "personal"],
-      "agents": ["cc"]
+      "args": [
+        "-y",
+        "screenpipe@latest",
+        "mcp"
+      ],
+      "env": {
+        "SCREENPIPE_API_KEY": "${env:SCREENPIPE_API_KEY}"
+      },
+      "categories": [
+        "memory",
+        "personal"
+      ],
+      "agents": [
+        "cc"
+      ]
     },
     "morph-mcp": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "morph-mcp"],
-      "env": { "MORPH_API_KEY": "${env:MORPH_API_KEY}" },
-      "categories": ["fast-apply"],
-      "agents": ["cc"]
+      "args": [
+        "-y",
+        "morph-mcp"
+      ],
+      "env": {
+        "MORPH_API_KEY": "${env:MORPH_API_KEY}"
+      },
+      "categories": [
+        "fast-apply"
+      ],
+      "agents": [
+        "cc"
+      ]
     },
     "foam": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "foam-cli", "mcp", "--workspace", "${env:ORIZ_KNOWLEDGE_DIR}"],
-      "env": { "ORIZ_KNOWLEDGE_DIR": "${env:ORIZ_KNOWLEDGE_DIR:-C:/D/oriz/knowledge}" },
-      "categories": ["knowledge"],
-      "agents": ["cc"]
+      "args": [
+        "-y",
+        "foam-cli",
+        "mcp",
+        "--workspace",
+        "${env:ORIZ_KNOWLEDGE_DIR}"
+      ],
+      "env": {
+        "ORIZ_KNOWLEDGE_DIR": "${env:ORIZ_KNOWLEDGE_DIR:-C:/D/oriz/knowledge}"
+      },
+      "categories": [
+        "knowledge"
+      ],
+      "agents": [
+        "cc"
+      ]
     },
     "shrimp-task-manager": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "mcp-shrimp-task-manager"],
-      "env": { "DATA_DIR": "${env:SHRIMP_DATA_DIR:-C:/D/oriz/.staging/shrimp-tasks}" },
-      "categories": ["coding", "task-management"],
-      "agents": ["cc", "opencode", "kilo", "antigravity"],
+      "args": [
+        "-y",
+        "mcp-shrimp-task-manager"
+      ],
+      "env": {
+        "DATA_DIR": "${env:SHRIMP_DATA_DIR:-C:/D/oriz/.staging/shrimp-tasks}"
+      },
+      "categories": [
+        "coding",
+        "task-management"
+      ],
+      "agents": [
+        "cc",
+        "opencode",
+        "kilo",
+        "antigravity",
+        "cline"
+      ],
       "_added": "2026-07-04",
       "_source": "https://github.com/cjo4m06/mcp-shrimp-task-manager",
       "_purpose": "Persistent task memory + dependency management + self-reflection for coding agents. Layered redundancy with superpowers writing-plans + executing-plans."
@@ -111,9 +224,16 @@
     "pandoc": {
       "type": "stdio",
       "command": "uvx",
-      "args": ["mcp-pandoc"],
-      "categories": ["docs", "conversion"],
-      "agents": ["*"],
+      "args": [
+        "mcp-pandoc"
+      ],
+      "categories": [
+        "docs",
+        "conversion"
+      ],
+      "agents": [
+        "*"
+      ],
       "_added": "2026-07-04",
       "_source": "https://github.com/vivekvells/mcp-pandoc",
       "_purpose": "Universal doc format converter (MD/HTML/PDF/DOCX/CSV/ebook). Layered with markitdown."
@@ -121,9 +241,17 @@
     "mermaid": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "@narasimhaponnada/mermaid-mcp-server"],
-      "categories": ["docs", "diagrams"],
-      "agents": ["*"],
+      "args": [
+        "-y",
+        "@narasimhaponnada/mermaid-mcp-server"
+      ],
+      "categories": [
+        "docs",
+        "diagrams"
+      ],
+      "agents": [
+        "*"
+      ],
       "_added": "2026-07-04",
       "_source": "https://github.com/Narasimhaponnada/mermaid-mcp",
       "_purpose": "22+ Mermaid diagram types with SVG/PNG/PDF export. Layered with diagram-generator skill (Graphviz)."
@@ -131,9 +259,16 @@
     "oxidize-pdf": {
       "type": "stdio",
       "command": "uvx",
-      "args": ["oxidize-pdf"],
-      "categories": ["docs", "pdf"],
-      "agents": ["*"],
+      "args": [
+        "oxidize-pdf"
+      ],
+      "categories": [
+        "docs",
+        "pdf"
+      ],
+      "agents": [
+        "*"
+      ],
       "_added": "2026-07-04",
       "_source": "https://github.com/bzsanti/oxidize-python",
       "_purpose": "Rust-powered PDF toolkit — create/read/split/merge/rotate/encrypt PDFs. Text extraction for RAG."
@@ -141,9 +276,17 @@
     "mcp-observatory": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "mcp-observatory"],
-      "categories": ["meta", "testing"],
-      "agents": ["cc"],
+      "args": [
+        "-y",
+        "mcp-observatory"
+      ],
+      "categories": [
+        "meta",
+        "testing"
+      ],
+      "agents": [
+        "cc"
+      ],
       "_added": "2026-07-04",
       "_source": "https://github.com/KryptosAI/mcp-observatory",
       "_purpose": "Regression tests for MCP server configs. Detects tool-schema drift between versions."
@@ -151,9 +294,17 @@
     "mcp-doctor": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "mcp-doctor"],
-      "categories": ["meta", "diagnostics"],
-      "agents": ["cc"],
+      "args": [
+        "-y",
+        "mcp-doctor"
+      ],
+      "categories": [
+        "meta",
+        "diagnostics"
+      ],
+      "agents": [
+        "cc"
+      ],
       "_added": "2026-07-04",
       "_source": "https://github.com/realwigu/mcp-doctor",
       "_purpose": "Zero-config diagnostics — auto-discovers CC/Cursor/VSCode configs, tests JSON-RPC handshake, benchmarks latency."
@@ -179,11 +330,14 @@
     "conversion": "Format conversion (doc formats, encodings)"
   },
   "_agent_targets": {
-    "*": "All fleet agents (CC + OpenCode + Kilo + Antigravity + Copilot)",
+    "*": "All fleet agents (CC + OpenCode + Kilo + Cline + Antigravity + Copilot + Freebuff + Qwen)",
     "cc": "Claude Code only",
     "opencode": "OpenCode only",
     "kilo": "Kilo Code only",
+    "cline": "Cline (VS Code, re-added 2026-07-04)",
     "antigravity": "Antigravity only",
-    "copilot": "GH Copilot CLI only"
+    "copilot": "GH Copilot CLI only",
+    "freebuff": "Freebuff CLI (no MCP support yet as of 0.0.118)",
+    "qwen": "Qwen Code CLI (verify MCP support)"
   }
 }
